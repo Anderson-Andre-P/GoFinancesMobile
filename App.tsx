@@ -11,6 +11,8 @@ import {
 import theme from "./src/global/styles/theme";
 import { StatusBar } from "expo-status-bar";
 import { Dashboard } from "./src/screens/Dashboard";
+import { Register } from "./src/screens/Register";
+import { CategorySelect } from "./src/screens/CategorySelect";
 import { View } from "react-native";
 
 export default function App() {
@@ -61,7 +63,7 @@ export default function App() {
             flex: 1,
           }}
         >
-          <Dashboard />
+          <CategorySelect />
         </View>
       </ThemeProvider>
     </>
