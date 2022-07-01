@@ -19,7 +19,7 @@ export const Category = styled.Text`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export const Icon = styled(Feather)`
+export const Icons = styled(Feather)`
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.text};
 `;
