@@ -12,7 +12,7 @@ export const Container = styled(GestureHandlerRootView)`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
-// alterei manualmente de 113px para 50px, mas ficou diferente da versão do ROdrigo.
+
 export const Header = styled.View`
   width: 100%;
   height: ${RFValue(113)}px;

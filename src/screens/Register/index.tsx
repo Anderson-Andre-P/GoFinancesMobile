@@ -19,6 +19,7 @@ import {
   Fields,
   TransactionTypes,
 } from "./styles";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export interface FormData {
   [name: string]: string;
@@ -116,13 +117,16 @@ export function Register() {
                 onPress={() => handleTransactionTypeSelect("down")}
               />
             </TransactionTypes>
-
+            {/* <GestureHandlerRootView> */}
             <CategorySelectButton
               title={category.name}
               onPress={handleOpenSelectCategoryModal}
             />
+            {/* </GestureHandlerRootView> */}
           </Fields>
+          {/* <GestureHandlerRootView> */}
           <Button title="Enviar" onPress={handleSubmit(handleRegister)} />
+          {/* </GestureHandlerRootView> */}
         </Form>
 
         <Modal visible={categoryModalOpen}>
