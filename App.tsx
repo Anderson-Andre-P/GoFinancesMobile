@@ -17,6 +17,9 @@ import { Register } from "./src/screens/Register";
 import { CategorySelect } from "./src/screens/CategorySelect";
 import { View } from "react-native";
 
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
