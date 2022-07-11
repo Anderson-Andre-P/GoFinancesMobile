@@ -14,6 +14,8 @@ import { AppRoutes } from "./src/routes/app.routes";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 
+import { SignIn } from "./src/screens/SignIn";
+
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
 
@@ -66,7 +68,7 @@ export default function App() {
           }}
         >
           <NavigationContainer>
-            <AppRoutes />
+            <SignIn />
           </NavigationContainer>
         </View>
       </ThemeProvider>
