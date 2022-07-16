@@ -25,6 +25,7 @@ import {
 } from "./styles";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useLinkBuilder } from "@react-navigation/native";
+import { useAuth } from "../../hooks/auth";
 
 export interface FormData {
   [name: string]: string;
@@ -50,6 +51,8 @@ export function Register() {
     key: "category",
     name: "Categoria",
   });
+
+  const { user } = useAuth();
 
   const navigation = useNavigation<NavigationProps>();
 
@@ -92,7 +95,7 @@ export function Register() {
     };
 
     try {
-      const dataKey = "@gofinances:transactions";
+      const dataKey = `@gofinances:transactions_user:${user.id}`;
       const data = await AsyncStorage.getItem(dataKey);
       const currentData = data ? JSON.parse(data) : [];
 

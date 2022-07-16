@@ -6,6 +6,11 @@
     "slug": "gofinances",
     "schema": "gofinances",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "host.io.gofinances"
+    }
   }
 }

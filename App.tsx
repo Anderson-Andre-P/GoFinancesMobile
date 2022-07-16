@@ -9,7 +9,7 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 import theme from "./src/global/styles/theme";
-import { NavigationContainer } from "@react-navigation/native";
+import { Routes } from "./src/routes/index";
 import { AppRoutes } from "./src/routes/app.routes";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
@@ -20,6 +20,7 @@ import { AuthProvider, useAuth } from "./src/hooks/auth";
 
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -39,6 +40,7 @@ export default function App() {
           Poppins_500Medium,
           Poppins_700Bold,
         });
+        const { userStorageLoading } = useAuth();
       } catch (e) {
         console.warn(e);
       } finally {
@@ -59,6 +61,10 @@ export default function App() {
     return null;
   }
 
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -69,11 +75,9 @@ export default function App() {
             flex: 1,
           }}
         >
-          <NavigationContainer>
-            <AuthProvider>
-              <SignIn />
-            </AuthProvider>
-          </NavigationContainer>
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
         </View>
       </ThemeProvider>
     </>
